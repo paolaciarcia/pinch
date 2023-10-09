@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var isAnimating: Bool = false
     @State private var imageScale: CGFloat = 1
     @State private var imageOffset: CGSize = .zero
-    @State private var isDrawerOpen: Bool = false
+    @State private var isDrawerOpen: Bool = true
     @State private var pageIndex: Int = 1
 
     let pages = [
@@ -160,6 +160,15 @@ struct ContentView: View {
                                 isDrawerOpen.toggle()
                             }
                         }
+
+                    ForEach(pages) { item in
+                        Image(item.imageName)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80)
+                            .cornerRadius(8)
+                            .shadow(radius: 4)
+                    }
 
                     Spacer()
                 }
