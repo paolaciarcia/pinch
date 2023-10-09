@@ -11,8 +11,8 @@ struct ContentView: View {
     @State private var isAnimating: Bool = false
     @State private var imageScale: CGFloat = 1
     @State private var imageOffset: CGSize = .zero
-    @State private var isDrawerOpen: Bool = true
-    @State private var pageIndex: Int = 1
+    @State private var isDrawerOpen: Bool = false
+    @State private var pageIndex: Int = 0
 
     let pages = [
         PageModel(id: 0, imageName: "magazine-front-cover"),
@@ -26,8 +26,8 @@ struct ContentView: View {
         }
     }
 
-    private func setCurrentPage() -> String {
-        return pages[pageIndex - 1].imageName
+    private func setCurrentPage(index: Int) -> String {
+        return pages[index].imageName
     }
 
     var body: some View {
@@ -35,7 +35,7 @@ struct ContentView: View {
             ZStack {
                 Color.clear
 
-                Image(setCurrentPage())
+                Image(setCurrentPage(index: pageIndex))
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(10)
@@ -162,12 +162,19 @@ struct ContentView: View {
                         }
 
                     ForEach(pages) { item in
-                        Image(item.imageName)
+                        Image(item.thumbnailName)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 80)
                             .cornerRadius(8)
                             .shadow(radius: 4)
+                            .opacity(isDrawerOpen ? 1 : 0)
+
+                            .onTapGesture {
+                                withAnimation(.easeOut) {
+                                    pageIndex = item.id
+                                }
+                            }
                     }
 
                     Spacer()

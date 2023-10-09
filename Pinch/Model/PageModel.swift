@@ -11,3 +11,9 @@ struct PageModel: Identifiable {
     let id: Int
     let imageName: String
 }
+
+extension PageModel {
+    var thumbnailName: String {
+        return "thumb-" + imageName
+    }
+}
