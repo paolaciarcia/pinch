@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct PageModel: Identifiable {
+    let id: Int
+    let imageName: String
+}

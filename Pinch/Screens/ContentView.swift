@@ -12,6 +12,12 @@ struct ContentView: View {
     @State private var imageScale: CGFloat = 1
     @State private var imageOffset: CGSize = .zero
     @State private var isDrawerOpen: Bool = false
+    @State private var pageIndex: Int = 1
+
+    let pages = [
+        PageModel(id: 0, imageName: "magazine-front-cover"),
+        PageModel(id: 1, imageName: "magazine-back-cover"),
+    ]
 
     private func resetImageState() {
         return withAnimation(.spring()) {
@@ -20,12 +26,16 @@ struct ContentView: View {
         }
     }
 
+    private func setCurrentPage() -> String {
+        return pages[pageIndex - 1].imageName
+    }
+
     var body: some View {
         NavigationView {
             ZStack {
                 Color.clear
 
-                Image("magazine-front-cover")
+                Image(setCurrentPage())
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(10)
