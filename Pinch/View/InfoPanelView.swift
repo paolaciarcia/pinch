@@ -28,18 +28,24 @@ struct InfoPanelView: View {
             Spacer()
 
             HStack(spacing: 2) {
+                Spacer()
+
                 Image(systemName: "arrow.up.left.and.arrow.down.right")
                 Text("\(scale)")
+                    .lineLimit(1)
+
 
                 Spacer()
 
                 Image(systemName: "arrow.left.and.right")
                 Text("\(offset.width)")
+                    .lineLimit(1)
 
                 Spacer()
 
                 Image(systemName: "arrow.up.and.down")
                 Text("\(offset.height)")
+                    .lineLimit(1)
 
                 Spacer()
             }
@@ -47,7 +53,7 @@ struct InfoPanelView: View {
             .padding(8)
             .background(.ultraThinMaterial)
             .cornerRadius(8)
-            .frame(maxWidth: 420)
+            .frame(maxWidth: 450)
             .opacity(isInfoPanelVisible ? 1 : 0)
 
             Spacer()

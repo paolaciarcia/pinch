@@ -14,7 +14,6 @@
 		C5AC2AF72AD47A6F005B75B7 /* InfoPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AC2AF62AD47A6F005B75B7 /* InfoPanelView.swift */; };
 		C5AC2AF92AD483CC005B75B7 /* ControlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AC2AF82AD483CC005B75B7 /* ControlImageView.swift */; };
 		C5AC2AFB2AD49A86005B75B7 /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AC2AFA2AD49A86005B75B7 /* PageModel.swift */; };
-		C5AC2AFD2AD49B35005B75B7 /* PageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AC2AFC2AD49B35005B75B7 /* PageData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +25,6 @@
 		C5AC2AF62AD47A6F005B75B7 /* InfoPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InfoPanelView.swift; path = Pinch/View/InfoPanelView.swift; sourceTree = SOURCE_ROOT; };
 		C5AC2AF82AD483CC005B75B7 /* ControlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlImageView.swift; sourceTree = "<group>"; };
 		C5AC2AFA2AD49A86005B75B7 /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
-		C5AC2AFC2AD49B35005B75B7 /* PageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +57,6 @@
 		C5AC2AE22AD466AD005B75B7 /* Pinch */ = {
 			isa = PBXGroup;
 			children = (
-				C5AC2AF42AD46C8E005B75B7 /* Data */,
 				C5AC2AF22AD46C5F005B75B7 /* View */,
 				C5AC2AF32AD46C6F005B75B7 /* Model */,
 				C5AC2AE32AD466AD005B75B7 /* PinchApp.swift */,
@@ -101,14 +98,6 @@
 				C5AC2AFA2AD49A86005B75B7 /* PageModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		C5AC2AF42AD46C8E005B75B7 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				C5AC2AFC2AD49B35005B75B7 /* PageData.swift */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +174,6 @@
 				C5AC2AFB2AD49A86005B75B7 /* PageModel.swift in Sources */,
 				C5AC2AE62AD466AD005B75B7 /* ContentView.swift in Sources */,
 				C5AC2AE42AD466AD005B75B7 /* PinchApp.swift in Sources */,
-				C5AC2AFD2AD49B35005B75B7 /* PageData.swift in Sources */,
 				C5AC2AF72AD47A6F005B75B7 /* InfoPanelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
