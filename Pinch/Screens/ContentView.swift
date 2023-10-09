@@ -64,8 +64,33 @@ struct ContentView: View {
                 }
             }
             .overlay(
-                InfoPanelView(scale: imageScale, offset: imageOffset),
+                InfoPanelView(scale: imageScale, offset: imageOffset)
+                    .padding(.horizontal)
+                    .padding(.top, 30),
                 alignment: .top
+            )
+
+            .overlay(
+                Group {
+                    HStack {
+                        Button {
+                        } label: {
+                            ControlImageView(icon: "minus.magnifyingglass")
+                        }
+
+                        Button {
+                        } label: {
+                            ControlImageView(icon: "arrow.up.left.and.down.right.magnifyingglass")
+                        }
+
+                        Button {
+                        } label: {
+                            ControlImageView(icon: "plus.magnifyingglass")
+                        }
+                    }
+                }
+                    .padding(.bottom, 30),
+                alignment: .bottom
             )
         }
         .navigationViewStyle(.stack)
